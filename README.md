@@ -73,6 +73,7 @@ Hier die XML-Ausgabe:
  
 Hier die Topics-Ansicht(bitte nur TimingstationData beachten):
  ![image](https://github.com/ashkodra/Mom/assets/94531999/8fcdf9c3-3dab-49d6-9933-26d0c7f52da2)
+ <br>
 Der Grund warum 12 Messages Enqueued und Dequeued wurden ist, dass ich schon zuvor einige Tests gemacht habe.
 Fragestellung für Protokoll
 •	Nennen Sie mindestens 4 Eigenschaften der Message Oriented Middleware?
