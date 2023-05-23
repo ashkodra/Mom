@@ -57,7 +57,7 @@ Mit dieser Methode empfängt man die Timingstationdaten.
  
 So sieht die Interaktion mit dem Benutzer aus:
 Beim Receiver mit: gradle clean bootRun -Pargs=receiver
- ![image](https://github.com/ashkodra/Mom/assets/94531999/42d77f00-a291-4a37-86e6-c72807bdc0fb)
+![image](https://github.com/ashkodra/Mom/assets/94531999/42d77f00-a291-4a37-86e6-c72807bdc0fb)
 ![image](https://github.com/ashkodra/Mom/assets/94531999/66da5b1b-7755-408d-8643-b3108e06906d)
 ![image](https://github.com/ashkodra/Mom/assets/94531999/67233313-ef0a-4cb4-a76e-cb28e07b74af)
 ![image](https://github.com/ashkodra/Mom/assets/94531999/290badf7-d33b-4baf-a42a-84ec41fca3e6)
@@ -75,31 +75,55 @@ Hier die Topics-Ansicht(bitte nur TimingstationData beachten):
  ![image](https://github.com/ashkodra/Mom/assets/94531999/8fcdf9c3-3dab-49d6-9933-26d0c7f52da2)
  <br>
 Der Grund warum 12 Messages Enqueued und Dequeued wurden ist, dass ich schon zuvor einige Tests gemacht habe.
-Fragestellung für Protokoll
-•	Nennen Sie mindestens 4 Eigenschaften der Message Oriented Middleware?
-Die Kommunikation kann Minuten (nicht ms) dauern
-Grundidee: Nachricht werden in Warteschlange einfügen
-Es herrscht eine persistente (asynchrone) Kommunikation
-Zwischenspeicherkapazität für Nachrichten im Kommunikationsnetz
-•	Was versteht man unter einer transienten und synchronen Kommunikation?
-Synchron: Sender ist blockiert bis: Gepuffert beim empfangenden Host, an den Empfänger zugestellt wurde der Empfänger die Nachricht verarbeitet hat
-Transiente Kommunikation: Nachricht wird nur so lange gespeichert solange Sender und Empfänger die Nachricht ausführen.
-•	Beschreiben Sie die Funktionsweise einer JMS Queue?
-Arbeitet nach dem Point-to-Point-Modell(jede Nachricht wird von einem Sender an einen Empfänger gesendet, der diese spezielle Nachricht empfängt und verarbeitet). 
-Ein Sender (oder Produzent) erstellt eine Nachricht und sendet sie an die Queue.
-Die Queue speichert die Nachricht in ihrer Warteschlange.
-Ein Empfänger (oder Konsument) meldet sich bei der Queue an, um Nachrichten abzurufen.
-Die Queue liefert die Nachricht an den Empfänger, der sie verarbeitet und bestätigt, dass er sie empfangen hat.
-Die Nachricht wird aus der Warteschlange gelöscht
-•	JMS Overview - Beschreiben Sie die wichtigsten JMS Klassen und deren Zusammenhang?
-ConnectionFactory: kreiert Connection
-Connection: kreiert Session
-Session: kreiert MessageProducer und MessageConsumer
-MessageProducer: schickt zu Destination
-MessageConsumer: erhält von Destination
-•	Beschreiben Sie die Funktionsweise eines JMS Topic?
-Es gibt M Verleger und N Abonnenten. Dabei wird eine Nachricht an alle Abonnenten zugestellt. Jedoch gibt es keine Garantie für die Reihenfolge der Nachrichten.
+Fragestellung für Protokoll <br>
 
-•	Was versteht man unter einem losen gekoppelten verteilten System? Nennen Sie ein Beispiel dazu. Warum spricht man hier von lose?
-In einem solchen System findet Kommunikation zwischen Komponenten statt, wobei sie nicht direkt voneinander abhängig sind. Das WWW ist ein verteiltes System, da es aus vielen verschiedenen Servern und Websites besteht, die über das Internet miteinander kommunizieren. Man spricht von einer losen Kopplung, da das System flexibler und widerstandsfähiger gegen Änderungen ist und die Komponenten nicht alles voneinander wissen.
+•	Nennen Sie mindestens 4 Eigenschaften der Message Oriented Middleware? <br>
+
+Die Kommunikation kann Minuten (nicht ms) dauern <br>
+
+Grundidee: Nachricht werden in Warteschlange einfügen <br>
+
+Es herrscht eine persistente (asynchrone) Kommunikation <br>
+
+Zwischenspeicherkapazität für Nachrichten im Kommunikationsnetz <br>
+
+•	Was versteht man unter einer transienten und synchronen Kommunikation? <br>
+
+Synchron: Sender ist blockiert bis: Gepuffert beim empfangenden Host, an den Empfänger zugestellt wurde der Empfänger die Nachricht verarbeitet hat
+Transiente Kommunikation: Nachricht wird nur so lange gespeichert solange Sender und Empfänger die Nachricht ausführen. <br>
+
+•	Beschreiben Sie die Funktionsweise einer JMS Queue? <br>
+
+Arbeitet nach dem Point-to-Point-Modell(jede Nachricht wird von einem Sender an einen Empfänger gesendet, der diese spezielle Nachricht empfängt und verarbeitet).  <br>
+
+Ein Sender (oder Produzent) erstellt eine Nachricht und sendet sie an die Queue. <br>
+
+Die Queue speichert die Nachricht in ihrer Warteschlange. <br>
+
+Ein Empfänger (oder Konsument) meldet sich bei der Queue an, um Nachrichten abzurufen. <br>
+
+Die Queue liefert die Nachricht an den Empfänger, der sie verarbeitet und bestätigt, dass er sie empfangen hat.
+Die Nachricht wird aus der Warteschlange gelöscht <br>
+
+•	JMS Overview - Beschreiben Sie die wichtigsten JMS Klassen und deren Zusammenhang? <br>
+
+ConnectionFactory: kreiert Connection <br>
+
+Connection: kreiert Session <br>
+
+Session: kreiert MessageProducer und MessageConsumer <br>
+
+MessageProducer: schickt zu Destination <br>
+
+MessageConsumer: erhält von Destination <br>
+
+•	Beschreiben Sie die Funktionsweise eines JMS Topic? <br>
+
+Es gibt M Verleger und N Abonnenten. Dabei wird eine Nachricht an alle Abonnenten zugestellt. Jedoch gibt es keine Garantie für die Reihenfolge der Nachrichten. <br>
+
+
+•	Was versteht man unter einem losen gekoppelten verteilten System? Nennen Sie ein Beispiel dazu. Warum spricht man hier von lose? <br>
+
+In einem solchen System findet Kommunikation zwischen Komponenten statt, wobei sie nicht direkt voneinander abhängig sind. Das WWW ist ein verteiltes System, da es aus vielen verschiedenen Servern und Websites besteht, die über das Internet miteinander kommunizieren.  <br>
+Man spricht von einer losen Kopplung, da das System flexibler und widerstandsfähiger gegen Änderungen ist und die Komponenten nicht alles voneinander wissen.
 
